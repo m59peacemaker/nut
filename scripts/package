@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build --file Dockerfile-AppImage --tag blawar_nut .
+docker build --file AppImage.Dockerfile --tag blawar_nut .
 docker create --name temp blawar_nut
 docker cp temp:/out ./
 docker rm temp
