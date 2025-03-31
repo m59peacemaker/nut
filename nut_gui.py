@@ -50,6 +50,7 @@ def run():
 	Hook.init()
 
 	app = QApplication(sys.argv)
+	app.setApplicationName("Nut")
 	app.setWindowIcon(QIcon("images/logo.jpg"))
 	ex = App()
 
