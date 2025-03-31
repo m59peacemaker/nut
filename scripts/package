@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker build -t nut-qt6 .
+docker create --name temp nut-qt6
+docker cp temp:/out ./
+docker rm temp

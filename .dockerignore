@@ -1,12 +1,20 @@
+out/
+
+.git
+.github
+
+# docker
+Dockerfile
+docker-compose.yml
+docker-compose.yaml
+
 # python
-__pycache__/
-*.py[cod]
-Pipfile.lock
-environment.yml
+**/__pycache__
+**/*.py[cod]
 
 # workspace
-.DS_Store
-.vscode
+**/.DS_Store
+**/.vscode
 
 # coverage
 htmlcov/
@@ -31,10 +39,6 @@ titledb/
 # data
 titles/
 _NSPOUT/
-*.nsp
-*.nsz
-*.xci
-*.xcz
 
 keys.txt
 prod.keys
@@ -47,4 +51,3 @@ nut2.lock
 *.bin
 *.token
 *.pem
-out

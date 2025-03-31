@@ -1,0 +1,63 @@
+#!/bin/sh
+
+set -ex
+
+# download as root user
+# sed -i 's/DownloadUser/#DownloadUser/g' /etc/pacman.conf
+
+pacman -Syu --noconfirm \
+	base-devel \
+	cmake \
+	gvfs \
+	file \
+	libcanberra \
+	libepoxy \
+	libjpeg-turbo \
+	at-spi2-core \
+	systemd-libs \
+	atk \
+	cairo \
+	gdk-pixbuf2 \
+	pango \
+	freetype2 \
+	fontconfig \
+	gtk3 \
+	libxkbcommon-x11 \
+	libx11 \
+	libxcb \
+	libxrandr \
+	libxfixes \
+	libxcursor \
+	libxinerama \
+	libxcomposite \
+	libxdamage \
+	libxss \
+	libxi \
+	wayland \
+	wayland-protocols \
+	libusb \
+	libssh \
+	curl \
+	openssl \
+	python \
+	python-pipx \
+	python-setuptools \
+	xcb-util \
+	xcb-util-cursor \
+	xcb-util-image \
+	xcb-util-keysyms \
+	xcb-util-renderutil \
+	xcb-util-wm \
+	xorg-server-xvfb \
+	pkgconf \
+	wget \
+	unzip \
+&& rm -rf /var/cache/pacman/pkg/*
+
+	# gcc13 \
+	# haskell-gnutls \
+	# vulkan-headers \
+	# vulkan-intel \
+	# vulkan-nouveau \
+	# vulkan-radeon \
+	# svt-av1 \
