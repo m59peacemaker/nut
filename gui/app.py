@@ -168,13 +168,13 @@ class App(QWidget):
 			)
 			QMessageBox.information(
 				self,
-				"Google Drive OAuth Setup",
-				"You require a credentials.json file to set up Google Drive "
-				+ "OAuth.  This file can be obtained from "
-				+ "https://developers.google.com/drive/api/v3/quickstart/go , "
-				+ "click on the blue button that says 'Enable the Drive API' "
-				+ "and save the credentials.json to t his application's "
-				+ "directory.",
+				'Google Drive OAuth Setup',
+				"You require a credentials.json file to set up Google Drive " +
+				"OAuth.  This file can be obtained from " +
+				"https://developers.google.com/drive/api/v3/quickstart/go , " +
+				"click on the blue button that says 'Enable the Drive API' " +
+				"and save the credentials.json to this application's " +
+				"directory.",
 			)
 		else:
 			buttonReply = QMessageBox.question(
