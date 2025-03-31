@@ -17,7 +17,7 @@ shardCount = None
 shardIndex = None
 reverse = False
 extractVersion = False
-autoUpdateTitleDb = True
+autoUpdateTitleDb = False
 allowNoMetadata = True
 cdnCacheOnly = False
 
