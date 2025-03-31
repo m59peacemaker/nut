@@ -383,6 +383,10 @@ def download(id):
 
 
 if __name__ == '__main__':
+	if len(sys.argv) == 1:
+		Print.info('No arguments provided. Use -h or --help for options.')
+		exit(1)
+
 	try:
 		with FileLock("nut2.lock") as lock:
 			urllib3.disable_warnings()
