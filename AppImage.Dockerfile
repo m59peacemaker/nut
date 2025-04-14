@@ -42,7 +42,7 @@ ENV NUT_DIR="usr/local/share/nut"
 
 COPY ./requirements.txt "/${NUT_DIR}/requirements.txt"
 
-RUN sharun lib4bin --strip --with-hooks --python-ver 3.9 --python-pkg "/${NUT_DIR}/requirements.txt" --dst-dir "/AppDir"
+RUN sharun lib4bin --strip --with-hooks --python-ver 3.13 --python-pkg "/${NUT_DIR}/requirements.txt" --dst-dir "/AppDir"
 
 COPY . "/${NUT_DIR}"
 

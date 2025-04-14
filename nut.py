@@ -551,14 +551,14 @@ if __name__ == '__main__':
 
 			Status.start()
 
-			Print.info('                        ,;:;;,')
-			Print.info('                       ;;;;;')
-			Print.info('               .=\',    ;:;;:,')
-			Print.info('              /_\', "=. \';:;:;')
-			Print.info('              @=:__,  \,;:;:\'')
-			Print.info('                _(\.=  ;:;;\'')
-			Print.info('               `"_(  _/="`')
-			Print.info('                `"\'')
+			Print.info(r'                        ,;:;;,')
+			Print.info(r'                       ;;;;;')
+			Print.info(r'               .=\',    ;:;;:,')
+			Print.info(r'              /_\', "=. \';:;:;')
+			Print.info(r'              @=:__,  \,;:;:\'')
+			Print.info(r'                _(\.=  ;:;;\'')
+			Print.info(r'               `"_(  _/="`')
+			Print.info(r'                `"\'')
 
 			if args.dry:
 				Config.dryRun = True
