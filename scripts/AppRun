@@ -18,4 +18,4 @@ HERE="$(dirname "$(readlink -f "$0")")"
 
 # "${HERE}/usr/local/bin/python3.9" "${HERE}/usr/local/share/nut/nut_gui.py" "$@"
 
-exec "${HERE}/sharun" python3 nut_gui.py "$@"
+exec "${HERE}/sharun" python3 "${HERE}/usr/local/share/nut/nut_gui.py" "$@"
