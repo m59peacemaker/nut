@@ -22,14 +22,24 @@ jobs:
             --build-arg VERSION="${VERSION}" \
             .
 
-      - name: Extract artifacts
+      - name: Extract assets
         run: |
           container_id=$(docker create blawar_nut-appimage)
           docker cp "${container_id}":/out ./out
           docker rm "${container_id}"
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
         with:
-          name: AppImage
-          path: ./out
+          tag_name: ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: AppImages
+          path: ./out/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
