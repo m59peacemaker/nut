@@ -10,8 +10,8 @@ import urllib3
 import json
 from filelock import Timeout, FileLock
 
-if not getattr(sys, 'frozen', False):
-	os.chdir(os.path.dirname(os.path.abspath(__file__)))
+# if not getattr(sys, 'frozen', False):
+# 	os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 #sys.path.insert(0, 'nut')
 
