@@ -19,7 +19,7 @@ jobs:
           docker build \
             --file AppImage.Dockerfile \
             --tag blawar_nut-AppImage \
-            --build-arg VERSION="${VERSION}"
+            --build-arg VERSION="${VERSION}" \
             .
 
       - name: Extract artifacts
