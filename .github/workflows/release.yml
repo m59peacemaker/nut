@@ -18,13 +18,13 @@ jobs:
           VERSION="$(python3 -c "import runpy; print(runpy.run_path('__version__.py')['__version__'])")"
           docker build \
             --file AppImage.Dockerfile \
-            --tag blawar_nut-AppImage \
+            --tag blawar_nut-appimage \
             --build-arg VERSION="${VERSION}" \
             .
 
       - name: Extract artifacts
         run: |
-          container_id=$(docker create blawar_nut-AppImage)
+          container_id=$(docker create blawar_nut-appimage)
           docker cp "${container_id}":/out ./out
           docker rm "${container_id}"
 
