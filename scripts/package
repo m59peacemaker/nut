@@ -1,6 +1,13 @@
 #!/bin/bash
 
-docker build --file AppImage.Dockerfile --tag blawar_nut .
-docker create --name temp blawar_nut
-docker cp temp:/out ./
-docker rm temp
+VERSION="$(python3 -c "import runpy; print(runpy.run_path('__version__.py')['__version__'])")"
+
+docker build \
+	--file AppImage.Dockerfile \
+	--tag blawar_nut-appimage \
+	--build-arg VERSION="${VERSION}" \
+	.
+
+container_id="$(docker create blawar_nut-appimage)"
+docker cp "${container_id}":/out ./out
+docker rm "${container_id}"

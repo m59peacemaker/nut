@@ -14,13 +14,19 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build Docker image
-        run: docker build -t nut .
+        run: |
+          VERSION="$(python3 -c "from nut.__version__ import __version__; print(__version__)")"
+          docker build \
+            --file AppImage.Dockerfile \
+            --tag blawar_nut-AppImage \
+            --build-arg VERSION="${VERSION}"
+            .
 
       - name: Extract artifacts
         run: |
-          container_id=$(docker create nut)
-          docker cp "$container_id":/out ./out
-          docker rm "$container_id"
+          container_id=$(docker create blawar_nut-AppImage)
+          docker cp "${container_id}":/out ./out
+          docker rm "${container_id}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

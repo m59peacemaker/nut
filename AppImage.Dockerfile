@@ -1,5 +1,7 @@
 FROM ghcr.io/pkgforge-dev/archlinux:latest
 
+ARG VERSION="dev"
+
 RUN mkdir "/tmp/work" "/out"
 
 WORKDIR "/tmp/work"
@@ -74,15 +76,15 @@ RUN uruntime --appimage-mkdwarfs -f \
 	--no-history --no-create-timestamp \
 	--compression zstd:level=22 -S26 -B32 \
 	--header "$(which uruntime)" \
-	-i /AppDir_cli -o /out/nut_cli.AppImage
+	-i /AppDir_cli -o "/out/nut_cli-v${VERSION}.AppImage"
 
-RUN chmod +x /out/nut_cli.AppImage
+RUN chmod +x "/out/nut_cli-v${VERSION}.AppImage"
 
 RUN uruntime --appimage-mkdwarfs -f \
 	--set-owner 0 --set-group 0 \
 	--no-history --no-create-timestamp \
 	--compression zstd:level=22 -S26 -B32 \
 	--header "$(which uruntime)" \
-	-i /AppDir -o /out/nut.AppImage
+	-i /AppDir -o "/out/nut-v${VERSION}.AppImage"
 
-RUN chmod +x /out/nut.AppImage
+RUN chmod +x "/out/nut-v${VERSION}.AppImage"
