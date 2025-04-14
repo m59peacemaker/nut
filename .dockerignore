@@ -11,6 +11,7 @@ docker-compose.yaml
 # python
 **/__pycache__
 **/*.py[cod]
+.venv
 
 # workspace
 **/.DS_Store

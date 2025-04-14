@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 Pipfile.lock
 environment.yml
+.venv
 
 # workspace
 .DS_Store
