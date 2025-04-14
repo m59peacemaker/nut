@@ -7,3 +7,4 @@ coveralls
 rope
 pre-commit
 pylint-exit
+bump-my-version

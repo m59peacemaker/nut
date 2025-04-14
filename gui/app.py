@@ -20,12 +20,12 @@ import nut
 from nut import Config, Users, Nsps
 import Fs.driver.init
 from translator import tr
-
+from __version__ import __version__
 
 class App(QWidget):
 	def __init__(self):
 		super().__init__()
-		self.title = "NUT 3.3"
+		self.title = f"NUT {__version__}"
 		self.needsRefresh = False
 		self.isInitialized = False
 		self.initUI()
