@@ -76,9 +76,9 @@ RUN uruntime --appimage-mkdwarfs -f \
 	--no-history --no-create-timestamp \
 	--compression zstd:level=22 -S26 -B32 \
 	--header "$(which uruntime)" \
-	-i /AppDir_cli -o "/out/nut_cli-v${VERSION}.AppImage"
+	-i /AppDir_cli -o "/out/nut-cli-v${VERSION}.AppImage"
 
-RUN chmod +x "/out/nut_cli-v${VERSION}.AppImage"
+RUN chmod +x "/out/nut-cli-v${VERSION}.AppImage"
 
 RUN uruntime --appimage-mkdwarfs -f \
 	--set-owner 0 --set-group 0 \
