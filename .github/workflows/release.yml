@@ -15,7 +15,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          VERSION="$(python3 -c "from nut.__version__ import __version__; print(__version__)")"
+          VERSION="$(python3 -c "import runpy; print(runpy.run_path('__version__.py')['__version__'])")"
           docker build \
             --file AppImage.Dockerfile \
             --tag blawar_nut-AppImage \
