@@ -58,9 +58,9 @@ RUN sharun lib4bin --strace-mode --strace-time 5 --strip --with-hooks \
 	--dst-dir "/AppDir_cli" \
 	"/AppDir_cli/sharun" -- python3 "/AppDir_cli/${NUT_DIR}/nut.py"
 
-# TODO: didn't work?
 RUN sharun lib4bin --dst-dir "/AppDir" --strip --with-hooks \
-	/usr/lib/gtk-3.0/modules/*
+	/usr/lib/gtk-3.0/modules/* \
+	/usr/lib/gio/modules/libgvfsdbus.so
 
 RUN xvfb-run -a -- sharun lib4bin --strace-mode --strace-time 10 --strip --with-hooks \
 	--dst-dir "/AppDir" \
